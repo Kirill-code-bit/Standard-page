@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Заголовок страницы</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
+      rel="stylesheet"
+      type="text/css" />
+    <link rel="stylesheet" href="style.css" />
+  <img src="photo/low.jpg" alt=”различный контент”>
+    
+
+    <!-- следующие 3 строки нужны для корректного отображения семантических элементов HTML5 в старых версиях Internet Explorer-->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <script>
+  let inputField = document.getElementById("myInput");
+if (inputField.value === "") {
+  alert("Поле ввода не должно быть пустым");
+}
+let emailField = document.getElementById("myEmail");
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailPattern.test(emailField.value)) {
+  alert("Некорректный email-адрес");
+}
+function checkNumber(num) {
+  // Проверяем, находится ли число в диапазоне от 10 до 100
+  if (num < 10 || num > 100) {
+    return false;
+  }
+  return true;
+}
+let numberField = document.getElementById("myNumber");
+if (!checkNumber(numberField.value)) {
+  alert("Число должно быть больше 10 и меньше 100");
+}
+if (empty($_POST['name'])) {
+    $errors[] = 'Поле "Имя" обязательно для заполнения';
+}
+if (empty($_POST['email'])) {
+    $errors[] = 'Поле "Email" обязательно для заполнения';
+}
+if (empty($_POST['message'])) {
+    $errors[] = 'Поле "Сообщение" обязательно для заполнения';
+}
+
+// Если есть ошибки, выводим их пользователю
+if (!empty($errors)) {
+    foreach ($errors as $error) {
+        echo '<p>' . $error . '</p>';
+    }
+    exit;
+}
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    $errors[] = 'Поле "Email" должно содержать правильный email-адрес';
+}
+
+// Если есть ошибки, выводим их пользователю
+if (!empty($errors)) {
+    foreach ($errors as $error) {
+        echo '<p>' . $error . '</p>';
+    }
+    exit;
+}
+$stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = ?");
+$stmt->execute([$_POST['username']]);
+if ($stmt->fetchColumn() > 0) {
+    $errors[] = 'Пользователь с таким именем уже существует';
+}
+
+// Если есть ошибки, выводим их пользователю
+if (!empty($errors)) {
+    foreach ($errors as $error) {
+        echo '<p>' . $error . '</p>';
+    }
+    exit;
+}
+</script>
+  <body style="background-image:url('img/car.jpg')">
+
+           <h2>Привет, мир!</h2>
+
+</body>
+    < заголовок используется на всех страницах веб-сайта -->
+
+    <header>
+      <h1>Заголовок</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#">Домашняя страница</a></li>
+        <li><a href="#">кампания</a></li>
+        <li><a href="#">Проекты</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+
+      <!-- Форма поиска — это ещё один распространённый нелинейный способ навигации по веб-сайту. -->
+      <form>
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <input type="submit" value="Отправить">
+      </form>
+
+<style>
+  input:invalid {
+    border: 2px solid red;
+  }
+</style>
+<table> 
+<tr>
+  <th>thing 1</th>
+  <th>thing 2</th>
+  <th>thing 3</th>
+  <th>thing 4</th>
+</tr>
+<tr>
+  <th>thing 5</th>
+  <th>thing 6</th>
+  <th>thing 7</th>
+  <th>thing 8</th>
+</tr>
+<tr>
+  <th>thing 9</th>
+  <th>thing 10</th>
+  <th>thing 11</th>
+  <th>thing 12</th>
+</tr>
+</table>
+    </nav>
+
+    <!-- Здесь основное содержимое нашей страницы -->
+    <main>
+      <!-- Она содержит статью -->
+      <article>
+        <h2>Заголовок статьи</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam
+          lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam
+          viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent
+          et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt
+          congue enim, ut porta lorem lacinia consectetur.
+        </p>
+
+        <h3>Подраздел</h3>
+
+        <p>
+          Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum
+          dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem.
+          Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.
+        </p>
+
+        <p>
+          Pelientesque auctor nisi id magna consequat sagittis. Curabitur
+          dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet.
+          Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.
+        </p>
+
+        <h3>Ещё один подраздел</h3>
+
+        <p>
+          Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum
+          soclis natoque penatibus et manis dis parturient montes, nascetur
+          ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem
+          facilisis semper ac in est.
+        </p>
+
+        <p>
+          Vivamus fermentum semper porta. Nunc diam velit, adipscing ut
+          tristique vitae sagittis vel odio. Maecenas convallis ullamcorper
+          ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi
+          diam iaculis velit, is fringille sem nunc vet mi.
+        </p>
+      </article>
+
+      <!-- Дополнительный контент также может быть вложен в основной контент -->
+      <aside>
+        <h2>Связанные темы</h2>
+
+        <ul>
+          <li><a href="#">page 1</a></li>
+          <li><a href="#">page 2</a></li>
+          <li><a href="#">page 3</a></li>
+          <li><a href="#">page 4</a></li>
+          <li><a href="#">page 5</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- И вот наш главный нижний колонтитул, который используется на всех страницах нашего веб-сайта -->
+
+    <footer>
+      <p>©Авторские права никому не принадлежат, 2050. Все права защищены.</p>
+    </footer>
+  </body>
+</html>
